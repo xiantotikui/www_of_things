@@ -1,0 +1,22 @@
+{% extends 'frontend/user_panel.html' %}
+
+{% block content %}
+  <div class="col content-menu-margin">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nazwa</th>
+          <th>Adres</th>
+          <th>Uruchom</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in available_urls %}
+          <td><a href="{% url 'worker_run' identyficator=identyficator name=name value=item %}">Uruchom</a></td>
+          <td><a href="{% url 'worker_single_element' identyficator=identyficator name=name value=item %}">{{ item }}</a></td>
+          <td>{{ address }}{{ name }}</td>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load is_admin %}
+{% load is_mod %}
+
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'alerts' %}"><span data-feather="alert-triangle"></span> Alarmy</a>
+        </li>
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'user_panel' %}"><span data-feather="activity"></span> Panel</a>
+            </li>
+        {% endif %}
+        {% if user.is_authenticated %}
+            {% if request.user|is_admin %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin_panel' %}"><span data-feather="globe"></span> Admin</a>
+                </li>
+            {% endif %}
+        {% endif %}
+        {% if user.is_authenticated %}
+            {% if request.user|is_mod %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'moderator_panel' %}"><span data-feather="home"></span> Mod</a>
+                </li>
+            {% endif %}
+        {% endif %}
+        </ul>
+    </div>
+</nav>

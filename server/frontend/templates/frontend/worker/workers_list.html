@@ -1,0 +1,22 @@
+{% extends 'frontend/user_panel.html' %}
+
+{% block content %}
+  <div class="col content-menu-margin">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Typ</th>
+          <th>Adres</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in available_urls %}
+          <tr>
+            <td><a href="{% url 'worker_element' identyficator=identyficator name=item %}">{{ item }}</a></td>
+            <td>{{ address }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

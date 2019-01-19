@@ -1,0 +1,28 @@
+{% extends 'frontend/user_panel.html' %}
+
+{% load modify_name %}
+
+{% block content %}
+  <div class="col content-menu-margin">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Typ</th>
+          <th>
+		    <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#collapseColumn" aria-expanded="true" aria-controls="collapseColumn">
+			  Adres
+			</button>
+		  </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in available_urls %}
+          <tr>
+            <td><a href="{% url 'device_sensor' identyficator=identyficator name=item %}">{{ item|modify_name }}</a></td>
+            <td class="collapse" id="collapseColumn">{{ address }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
