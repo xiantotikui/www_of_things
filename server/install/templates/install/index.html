@@ -1,0 +1,17 @@
+{% extends 'panels/admin_panel.html' %}
+
+{% load i18n %}
+
+{% block content %}
+  <div class="col">
+    <form action="" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        {% csrf_token %}
+        <label for="exampleFormControlFile1">{% trans 'SelJSON' %}</label>
+        <br>
+        <input type="file" name="json_data">
+        <button type="submit" class="btn btn-primary">{% trans 'Upload' %}</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

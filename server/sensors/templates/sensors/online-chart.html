@@ -1,0 +1,13 @@
+{% extends 'panels/user_panel.html' %}
+
+{% load i18n %}
+{% load chartkick %}
+
+{% load conv_date %}
+{% load add_units %}
+
+{% block content %}
+  <div class="content-menu-margin" style="min-width: 800px;">
+    {% line_chart available_values with width='800px' %}
+  </div>
+{% endblock %}

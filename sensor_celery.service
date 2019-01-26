@@ -1,0 +1,20 @@
+[Unit]
+Description = Sensor WoT
+After = network.target
+
+[Service]
+#PermissionsStartOnly = true
+PIDFile = /run/sensor_wot/sensor_wot_c.pid
+User = root
+Group = root
+WorkingDirectory = /root/sensor
+ExecStartPre = /usr/bin/mkdir /run/sensor_wot_c
+ExecStartPre = /usr/bin/chown -R root:root /run/sensor_wot_c
+ExecStart = /usr/bin/env celery --app=sensor worker --pidfile=/run/sensor_wot/sensor_wot_c.pid
+ExecReload = /usr/bin/kill -s HUP $MAINPID
+ExecStop = /usr/bin/kill -s TERM $MAINPID
+ExecStopPost = /usr/bin/rm -rf /run/sensor_wot_c
+PrivateTmp = true
+
+[Install]
+WantedBy = multi-user.target

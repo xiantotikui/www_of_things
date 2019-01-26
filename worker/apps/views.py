@@ -19,7 +19,7 @@ def index(request):
         response = json.loads(request.body.decode('utf8'))
         if __check_token(response):
             try:
-                uniq = Sensor.objects.values('sensor_type').distinct()
+                uniq = Worker.objects.values('worker_type').distinct()
             except:
                 return HttpResponseServerError(500)
             u = []
@@ -50,13 +50,13 @@ def worker(request, worker_type):
             return HttpResponseForbidden(403)
 
 @csrf_exempt
-def single_worker(request, worker_type, name):
+def single_worker(request, worker_type, worker_name):
     if request.method == 'POST':
         response = json.loads(request.body.decode('utf8'))
         if __check_token(response):
             try:
                 all_workers = Worker.objects.filter(worker_type=worker_type)
-                workers = all_workers.get(worker_name=name)
+                workers = all_workers.get(worker_name=worker_name)
                 values = WorkerState.objects.filter(worker_device=workers)
             except:
                 return HttpResponseServerError(500)
@@ -70,15 +70,15 @@ def single_worker(request, worker_type, name):
             return HttpResponseForbidden(403)
 
 @csrf_exempt
-def run_worker(request, worker_type, name):
+def run_worker(request, worker_type, worker_name):
     if request.method == 'POST':
         response = json.loads(request.body.decode('utf8'))
         if __check_token(response):
             secounds = int(response['time'])
             try:
                 all_workers = Worker.objects.filter(worker_type=worker_type)
-                workers = all_workers.get(worker_name=name)
-                run_workers.delay(name, secounds)
+                workers = all_workers.get(worker_name=worker_name)
+                run_workers.delay(worker_name, secounds)
                 return HttpResponse(200)
             except:
                 return HttpResponseServerError(500)

@@ -1,0 +1,20 @@
+[Unit]
+Description = Sensor WoT
+After = network.target
+
+[Service]
+#PermissionsStartOnly = true
+PIDFile = /run/sensor_wot/sensor_wot_b.pid
+User = root
+Group = root
+WorkingDirectory = /root/sensor
+ExecStartPre = /usr/bin/mkdir /run/sensor_wot_b
+ExecStartPre = /usr/bin/chown -R root:root /run/sensor_wot_b
+ExecStart = /usr/bin/env celery --app=sensor beat --scheduler django_celery_beat.schedulers:DatabaseScheduler --pidfile=/run/sensor_wot/sensor_wot_b.pid
+ExecReload = /usr/bin/kill -s HUP $MAINPID
+ExecStop = /usr/bin/kill -s TERM $MAINPID
+ExecStopPost = /usr/bin/rm -rf /run/sensor_wot_b
+PrivateTmp = true
+
+[Install]
+WantedBy = multi-user.target

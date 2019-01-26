@@ -1,0 +1,28 @@
+{% extends 'panels/user_panel.html' %}
+
+{% load i18n %}
+
+{% block content %}
+  <div class="col content-menu-margin">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{% trans 'WrkName' %}</th>
+          <th>{% trans 'WrkRun' %}</th>
+          <th>
+		    <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#collapseColumn" aria-expanded="true" aria-controls="collapseColumn">
+			  {% trans 'WrkAddr' %}
+			</button>
+		  </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in available_urls %}
+		  <td><a href="{% url 'workers:online-show' identyficator=identyficator name=name value=item %}">{{ item }}</a></td>
+		  <td><a href="{% url 'workers:online-run' identyficator=identyficator name=name value=item %}">Uruchom</a></td>
+		  <td class="collapse" id="collapseColumn">{{ address }}{{ name }}</td>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

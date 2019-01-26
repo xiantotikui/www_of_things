@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
+{% load i18n %}
+
 {% block content %}
-  <div class="col content-menu-margin">
-    <p>Witaj w Swiecie WoT!</p>
+  <div>
+    <p>{% trans 'Welcome' %}</p>
   </div>
 {% endblock %}

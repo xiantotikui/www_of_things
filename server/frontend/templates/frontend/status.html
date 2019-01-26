@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+  <div class="col content-menu-margin">
+    <h3>{% trans 'SrvStatus' %}</h3>
+    <p>{{ code_int }}</p>
+	<h3>{% trans 'DevStatus' %}</h3>
+    <p>{{ code_ext }}</p>
+  </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'panels/user_panel.html' %}
+
+{% load i18n %}
+
+{% load conv_date %}
+
+{% block content %}
+  <div class="col content-menu-margin">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{% trans 'WrkCreated' %}</th>
+          <th>{% trans 'WrkState' %}</th>
+          <th>
+		    <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#collapseColumn" aria-expanded="true" aria-controls="collapseColumn">
+			  {% trans 'WrkAddr' %}
+			</button>
+		  </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for value in available_values %}
+          <tr>
+            <td>{{ value.1|conv_date }}</td>
+            <td>{{ value.0 }}</td>
+            <td class="collapse" id="collapseColumn">{{ address }}{{ name }}/{{ val }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

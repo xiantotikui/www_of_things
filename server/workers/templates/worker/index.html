@@ -1,0 +1,28 @@
+{% extends 'panels/user_panel.html' %}
+
+{% load i18n %}
+
+{% block content %}
+  <div class="col content-menu-margin">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{% trans 'WrkName' %}</th>
+          <th>{% trans 'WrkType' %}</th>
+          <th>
+			<button class="btn btn-outline-primary" data-toggle="collapse" data-target="#collapseColumn" aria-expanded="true" aria-controls="collapseColumn">
+			  {% trans 'WrkAddr' %}
+			</button>
+		  </th>
+        </tr>
+      <thead>
+      <tbody>
+        {% for item in devices %}
+          <td><a href="{% url 'workers:show' identyficator=item.id %}">{{ item.device_name }}</a></td>
+          <td>{{ item.device_type }}</td>
+          <td class="collapse" id="collapseColumn">{{ item.device_address }}</td>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

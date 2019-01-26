@@ -1,0 +1,224 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-24 12:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/feed.py:17
+msgid "AlarmsFeedTitle"
+msgstr "WoT Alarms"
+
+#: frontend/feed.py:18
+msgid "AlarmsFeedDesc"
+msgstr "Emergency notifications."
+
+#: frontend/forms.py:24
+msgid "TaskFormName"
+msgstr "Task name"
+
+#: frontend/forms.py:25
+msgid "TaskFormRefresh"
+msgstr "Task refresh"
+
+#: frontend/forms.py:26
+msgid "TaskFormSensNames"
+msgstr "Sensor address in format: [URL type name]"
+
+#: frontend/forms.py:27
+msgid "TaskFormWrkNames"
+msgstr "Worker address in format: [URL type name]"
+
+#: frontend/forms.py:28
+msgid "TaskFormMinVal"
+msgstr "Minimal limit value to run"
+
+#: frontend/forms.py:29
+msgid "TaskFormMinAllways"
+msgstr "Without lower limit"
+
+#: frontend/forms.py:30
+msgid "TaskFormMaxVal"
+msgstr "Maximum limit value to run"
+
+#: frontend/forms.py:31
+msgid "TaskFormMaxAlways"
+msgstr "Without upper limit"
+
+#: frontend/forms.py:32
+msgid "TaskFormExe"
+msgstr "Run time"
+
+#: frontend/forms.py:44
+msgid "CronFormName"
+msgstr "Cron name"
+
+#: frontend/forms.py:45
+msgid "CronFormRefresh"
+msgstr "Cron refresh"
+
+#: frontend/forms.py:46
+msgid "CronFormWrkNames"
+msgstr "Worker address in format: [URL type name]"
+
+#: frontend/forms.py:47
+msgid "CronFormCronVal"
+msgstr "Cron value"
+
+#: frontend/forms.py:48
+msgid "CronFormExe"
+msgstr "Run time"
+
+#: frontend/templates/frontend/admin_menu.html:4
+msgid "InstallDev"
+msgstr "Install devices"
+
+#: frontend/templates/frontend/device/devices_list.html:12
+#: frontend/templates/frontend/device/list.html:11
+msgid "SensType"
+msgstr "Type"
+
+#: frontend/templates/frontend/device/devices_list.html:15
+#: frontend/templates/frontend/device/list.html:14
+#: frontend/templates/frontend/device/sensors_list.html:14
+#: frontend/templates/frontend/device/values_list.html:17
+msgid "SensAddr"
+msgstr "Address"
+
+#: frontend/templates/frontend/device/list.html:10
+#: frontend/templates/frontend/device/sensors_list.html:10
+msgid "SensName"
+msgstr "Name"
+
+#: frontend/templates/frontend/device/sensors_list.html:11
+msgid "SensCharts"
+msgstr "Charts"
+
+#: frontend/templates/frontend/device/sensors_list.html:22
+msgid "SensChart"
+msgstr "Chart"
+
+#: frontend/templates/frontend/device/values_list.html:13
+msgid "SensCreated"
+msgstr "Created"
+
+#: frontend/templates/frontend/device/values_list.html:14
+msgid "SensValue"
+msgstr "Value"
+
+#: frontend/templates/frontend/index.html:7
+msgid "Welcome"
+msgstr "Welcome in WoT world!"
+
+#: frontend/templates/frontend/mod_menu.html:4
+msgid "NewTask"
+msgstr "New task"
+
+#: frontend/templates/frontend/mod_menu.html:5
+msgid "NewCron"
+msgstr "New Cron"
+
+#: frontend/templates/frontend/seed/index.html:10
+msgid "SelJSON"
+msgstr "Select JSON"
+
+#: frontend/templates/frontend/seed/index.html:13
+msgid "Upload"
+msgstr "Upload"
+
+#: frontend/templates/frontend/task/cron_edit.html:15
+#: frontend/templates/frontend/task/task_edit.html:15
+msgid "Save"
+msgstr "Save"
+
+#: frontend/templates/frontend/user_menu.html:4
+msgid "Sensors"
+msgstr "Sensors"
+
+#: frontend/templates/frontend/user_menu.html:5
+msgid "Devices"
+msgstr "Devices"
+
+#: frontend/templates/frontend/worker/elements_list.html:10
+#: frontend/templates/frontend/worker/list.html:10
+msgid "WrkName"
+msgstr "Name"
+
+#: frontend/templates/frontend/worker/elements_list.html:11
+msgid "WrkRun"
+msgstr "Run"
+
+#: frontend/templates/frontend/worker/elements_list.html:14
+#: frontend/templates/frontend/worker/list.html:14
+#: frontend/templates/frontend/worker/states_list.html:16
+#: frontend/templates/frontend/worker/workers_list.html:15
+msgid "WrkAddr"
+msgstr "Address"
+
+#: frontend/templates/frontend/worker/list.html:11
+#: frontend/templates/frontend/worker/workers_list.html:12
+msgid "WrkType"
+msgstr "Type"
+
+#: frontend/templates/frontend/worker/states_list.html:12
+msgid "WrkCreated"
+msgstr "Created"
+
+#: frontend/templates/frontend/worker/states_list.html:13
+msgid "WrkState"
+msgstr "State"
+
+#: frontend/templates/header.html:7
+msgid "LogOut"
+msgstr "LogOut"
+
+#: frontend/templates/header.html:9
+#: frontend/templates/registration/login.html:7
+#: frontend/templates/registration/login.html:14
+msgid "LogIn"
+msgstr "LogIn"
+
+#: frontend/templates/panel.html:9
+msgid "Alarms"
+msgstr "Alarms"
+
+#: frontend/templates/panel.html:13
+msgid "Panel"
+msgstr "Panel"
+
+#: frontend/templates/panel.html:19
+msgid "Admin"
+msgstr "Admin"
+
+#: frontend/templates/panel.html:26
+msgid "Mod"
+msgstr "Mod"
+
+#: frontend/templates/status.html:7
+msgid "SrvStatus"
+msgstr "Server Status"
+
+#: frontend/templates/status.html:9
+msgid "DevStatus"
+msgstr "Device Status"
+
+#: server/settings.py:73
+msgid "English"
+msgstr "English"
+
+#: server/settings.py:74
+msgid "Polish"
+msgstr "Polish"

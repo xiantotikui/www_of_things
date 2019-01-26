@@ -1,0 +1,12 @@
+celery
+Django
+django-celery-beat
+django-crispy-forms
+flower
+gunicorn
+redis
+requests
+whitenoise
+wiringpi
+zc.lockfile
+chartkick

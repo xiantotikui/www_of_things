@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,28 +21,28 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(v*ovsvyi=^xoe_5#ygn_@lzjj2ruz000mus+s0j8mzo1kz+%r'
+SECRET_KEY = '[twój_sekretny_klucz]'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['server.fuszara.pl']
+ALLOWED_HOSTS = ['127.0.0.1', 'server.fuszara.pl']
 
 # Application definition
 
-APPEND_SLASH = False
+APPEND_SLASH = True
 
-SESSION_COOKIE_DOMAIN = '.fuszara.pl'
+SESSION_COOKIE_DOMAIN = '127.0.0.1'
 CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = ['sensor.fuszara.pl']
 CSRF_COOKIE_DOMAIN = '.fuszara.pl'
 
-LOGIN_REDIRECT_URL = '/panel/user/'
+LOGIN_REDIRECT_URL = '/user'
 LOGOUT_REDIRECT_URL = '/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CELERY_IMPORTS = ['frontend.tasks']
+CELERY_IMPORTS = ['tasks.tasks', 'crons.tasks']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -52,26 +53,39 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_celery_beat',
     'crispy_forms',
+	'chartkick',
+	'install',
+	'backend',
     'frontend',
+	'sensors',
+	'workers',
+	'tasks',
+	'crons',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('pl', _('Polish')),
+)
 
 ROOT_URLCONF = 'server.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend/templates/frontend')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,15 +95,19 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'libraries': {
-                'is_admin': 'frontend.templatetags.is_admin',
-                'is_mod': 'frontend.templatetags.is_mod',
-				'conv_date': 'frontend.templatetags.conv_date',
-                'modify_name': 'frontend.templatetags.modify_name',
-				'add_units': 'frontend.templatetags.add_units',
+                'is_admin': 'templatetags.is_admin',
+                'is_mod': 'templatetags.is_mod',
+				'conv_date': 'templatetags.conv_date',
+                'modify_name': 'templatetags.modify_name',
+				'add_units': 'templatetags.add_units',
             },
         },
     },
 ]
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -145,6 +163,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+import chartkick
+STATICFILES_DIRS = (
+    chartkick.js(),
+)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

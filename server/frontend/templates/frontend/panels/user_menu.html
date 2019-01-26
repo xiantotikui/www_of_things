@@ -1,0 +1,6 @@
+﻿{% load i18n %}
+
+{% block content %}
+    <a href="{% url 'sensors:index' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'Sensors' %}</a>
+    <a href="{% url 'workers:index' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'Devices' %}</a>
+{% endblock %}

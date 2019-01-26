@@ -5,15 +5,18 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from django.views import View
 
-from .models import Server, Device, Alert
+from django.utils.translation import ugettext as _
+
+from backend.models import Server, Device
+from .models import Alert
 
 class AlertsFeed(View):
     def __init__(self):
         self.feed = {}
         self.feed['version'] = 'https://jsonfeed.org/version/1'
         
-        self.feed['title'] = 'Alarmy WoT'
-        self.feed['description'] = 'Powiadomienia o sytuacjach nadzwyczajnych.'
+        self.feed['title'] = _('AlarmsFeedTitle')
+        self.feed['description'] = _('AlarmsFeedDesc')
         self.feed['home_page_url'] = 'https://server.fuszara.pl/'
         self.feed['feed_url'] = 'https://server.fuszara.pl/alerts/feed.json'
         self.feed['author'] = {}
