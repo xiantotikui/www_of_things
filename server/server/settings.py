@@ -26,18 +26,18 @@ SECRET_KEY = '[twój_sekretny_klucz]'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'server.fuszara.pl']
+ALLOWED_HOSTS = ['server.fuszara.pl']
 
 # Application definition
 
 APPEND_SLASH = True
 
-SESSION_COOKIE_DOMAIN = '127.0.0.1'
+SESSION_COOKIE_DOMAIN = '.fuszara.pl'
 CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = ['sensor.fuszara.pl']
 CSRF_COOKIE_DOMAIN = '.fuszara.pl'
 
-LOGIN_REDIRECT_URL = '/user'
+LOGIN_REDIRECT_URL = '/users'
 LOGOUT_REDIRECT_URL = '/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -69,7 +69,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -85,7 +85,7 @@ ROOT_URLCONF = 'server.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'frontend/templates/frontend')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -167,6 +167,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 import chartkick
 STATICFILES_DIRS = (
     chartkick.js(),
+	os.path.join(BASE_DIR, 'templates/static'),
 )
 
 MEDIA_URL = '/media/'
