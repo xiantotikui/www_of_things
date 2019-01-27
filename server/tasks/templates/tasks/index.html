@@ -6,13 +6,24 @@
 
 {% block content %}
   <div>
-    <h1>Nowe zadanie</h1>
-    <form method="POST">
-        <div class="form-group">
-            {% csrf_token %}
-            {{ form|crispy }}
-        </div>
-        <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
-    </form>
+    <a href="{% url 'tasks:create' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'TaskNew' %}</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{% trans 'TaskName' %}</th>
+          <th>{% trans 'TaskUpdates' %}</th>
+		  <th>{% trans 'TaskDeletes' %}</th>
+        </tr>
+      <thead>
+      <tbody>
+        {% for item in data %}
+		  <tr>
+            <td><a href="{% url 'tasks:show' name=item.task_name %}">{{ item.task_name }}</a></td>
+            <td><a href="{% url 'tasks:update' name=item.task_name %}">{% trans 'TaskUpdate' %}</a></td>
+		    <td><a href="{% url 'tasks:delete' name=item.task_name %}">{% trans 'TaskDelete' %}</a></td>
+		  </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% endblock %}

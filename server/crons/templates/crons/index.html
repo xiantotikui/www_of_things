@@ -6,13 +6,24 @@
 
 {% block content %}
   <div>
-    <h1>Nowy cron</h1>
-    <form method="POST">
-        <div class="form-group">
-            {% csrf_token %}
-            {{ form|crispy }}
-        </div>
-        <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
-    </form>
+    <a href="{% url 'crons:create' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'CronNew' %}</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{% trans 'CronName' %}</th>
+          <th>{% trans 'CronUpdates' %}</th>
+		  <th>{% trans 'CronDeletes' %}</th>
+        </tr>
+      <thead>
+      <tbody>
+        {% for item in data %}
+		  <tr>
+            <td><a href="{% url 'crons:show' name=item.task_name %}">{{ item.task_name }}</a></td>
+            <td><a href="{% url 'crons:update' name=item.task_name %}">{% trans 'CronUpdate' %}</a></td>
+		    <td><a href="{% url 'crons:delete' name=item.task_name %}">{% trans 'CronDelete' %}</a></td>
+		  </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% endblock %}

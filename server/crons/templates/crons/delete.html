@@ -1,0 +1,15 @@
+ {% extends 'panels/mod_panel.html' %}
+
+{% load i18n %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div>
+      <form method="post">
+      {% csrf_token %}
+      {% trans 'TaskDeleteConfirm' %} "{{ task }}" ?<br/>
+      <input type="submit" value="Delete" />
+    </form>
+  </div>
+{% endblock %}

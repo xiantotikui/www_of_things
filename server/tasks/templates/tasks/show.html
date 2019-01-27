@@ -1,0 +1,21 @@
+{% extends 'panels/mod_panel.html' %}
+
+{% load i18n %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div>
+    <a href="{% url 'tasks:create' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'TaskNew' %}</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>{% trans 'TaskName' %}</th>
+        </tr>
+      <thead>
+      <tbody>
+          <td>{{ data.task_name }}</td>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

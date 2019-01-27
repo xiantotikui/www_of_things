@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 class Task(models.Model):
-    task_name = models.CharField(max_length=32)
+    task_name = models.CharField(max_length=32, unique=True)
     task_refresh = models.IntegerField()
     sensors_names = models.TextField()
     workers_names = models.TextField()

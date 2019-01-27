@@ -1,6 +1,6 @@
 {% load i18n %}
 
 {% block content %}
-    <a href="{% url 'tasks:create' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'NewTask' %}</a>
-    <a href="{% url 'crons:create' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'NewCron' %}</a>
+    <a href="{% url 'tasks:index' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'Tasks' %}</a>
+    <a href="{% url 'crons:index' %}" class="btn btn-primary btn-lg active mx-2" role="button" aria-pressed="true">{% trans 'Crons' %}</a>
 {% endblock %}

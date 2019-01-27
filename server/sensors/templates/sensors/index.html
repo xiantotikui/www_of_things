@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block content %}
-  <div class="col content-menu-margin">
+  <div>
     <table class="table">
       <thead>
         <tr>
@@ -18,9 +18,11 @@
       <thead>
       <tbody>
         {% for item in devices %}
-          <td><a href="{% url 'sensors:show' identyficator=item.id %}">{{ item.device_name }}</a></td>
-          <td>{{ item.device_type }}</td>
-          <td class="collapse" id="collapseColumn">{{ item.device_address }}</td>
+		  <tr>
+            <td><a href="{% url 'sensors:show' identyficator=item.id %}">{{ item.device_name }}</a></td>
+            <td>{{ item.device_type }}</td>
+            <td class="collapse" id="collapseColumn">{{ item.device_address }}</td>
+		  </tr>
         {% endfor %}
       </tbody>
     </table>

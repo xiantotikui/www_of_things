@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-24 12:13+0000\n"
+"POT-Creation-Date: 2019-01-27 11:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,207 +18,258 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/feed.py:17
-msgid "AlarmsFeedTitle"
-msgstr "WoT Alarms"
-
-#: frontend/feed.py:18
-msgid "AlarmsFeedDesc"
-msgstr "Emergency notifications."
-
-#: frontend/forms.py:24
-msgid "TaskFormName"
-msgstr "Task name"
-
-#: frontend/forms.py:25
-msgid "TaskFormRefresh"
-msgstr "Task refresh"
-
-#: frontend/forms.py:26
-msgid "TaskFormSensNames"
-msgstr "Sensor address in format: [URL type name]"
-
-#: frontend/forms.py:27
-msgid "TaskFormWrkNames"
-msgstr "Worker address in format: [URL type name]"
-
-#: frontend/forms.py:28
-msgid "TaskFormMinVal"
-msgstr "Minimal limit value to run"
-
-#: frontend/forms.py:29
-msgid "TaskFormMinAllways"
-msgstr "Without lower limit"
-
-#: frontend/forms.py:30
-msgid "TaskFormMaxVal"
-msgstr "Maximum limit value to run"
-
-#: frontend/forms.py:31
-msgid "TaskFormMaxAlways"
-msgstr "Without upper limit"
-
-#: frontend/forms.py:32
-msgid "TaskFormExe"
-msgstr "Run time"
-
-#: frontend/forms.py:44
+#: crons/forms.py:16
 msgid "CronFormName"
 msgstr "Cron name"
 
-#: frontend/forms.py:45
+#: crons/forms.py:17
 msgid "CronFormRefresh"
 msgstr "Cron refresh"
 
-#: frontend/forms.py:46
+#: crons/forms.py:18
 msgid "CronFormWrkNames"
 msgstr "Worker address in format: [URL type name]"
 
-#: frontend/forms.py:47
+#: crons/forms.py:19
 msgid "CronFormCronVal"
 msgstr "Cron value"
 
-#: frontend/forms.py:48
+#: crons/forms.py:20
 msgid "CronFormExe"
 msgstr "Run time"
 
-#: frontend/templates/frontend/admin_menu.html:4
-msgid "InstallDev"
-msgstr "Install devices"
+#: crons/templates/crons/delete.html:11 tasks/templates/tasks/delete.html:11
+msgid "TaskDeleteConfirm"
+msgstr "Confirm delete cron: "
 
-#: frontend/templates/frontend/device/devices_list.html:12
-#: frontend/templates/frontend/device/list.html:11
-msgid "SensType"
-msgstr "Type"
-
-#: frontend/templates/frontend/device/devices_list.html:15
-#: frontend/templates/frontend/device/list.html:14
-#: frontend/templates/frontend/device/sensors_list.html:14
-#: frontend/templates/frontend/device/values_list.html:17
-msgid "SensAddr"
-msgstr "Address"
-
-#: frontend/templates/frontend/device/list.html:10
-#: frontend/templates/frontend/device/sensors_list.html:10
-msgid "SensName"
-msgstr "Name"
-
-#: frontend/templates/frontend/device/sensors_list.html:11
-msgid "SensCharts"
-msgstr "Charts"
-
-#: frontend/templates/frontend/device/sensors_list.html:22
-msgid "SensChart"
-msgstr "Chart"
-
-#: frontend/templates/frontend/device/values_list.html:13
-msgid "SensCreated"
-msgstr "Created"
-
-#: frontend/templates/frontend/device/values_list.html:14
-msgid "SensValue"
-msgstr "Value"
-
-#: frontend/templates/frontend/index.html:7
-msgid "Welcome"
-msgstr "Welcome in WoT world!"
-
-#: frontend/templates/frontend/mod_menu.html:4
-msgid "NewTask"
-msgstr "New task"
-
-#: frontend/templates/frontend/mod_menu.html:5
-msgid "NewCron"
-msgstr "New Cron"
-
-#: frontend/templates/frontend/seed/index.html:10
-msgid "SelJSON"
-msgstr "Select JSON"
-
-#: frontend/templates/frontend/seed/index.html:13
-msgid "Upload"
-msgstr "Upload"
-
-#: frontend/templates/frontend/task/cron_edit.html:15
-#: frontend/templates/frontend/task/task_edit.html:15
+#: crons/templates/crons/form.html:15 tasks/templates/tasks/form.html:15
 msgid "Save"
 msgstr "Save"
 
-#: frontend/templates/frontend/user_menu.html:4
-msgid "Sensors"
-msgstr "Sensors"
+#: crons/templates/crons/index.html:9
+msgid "CronNew"
+msgstr "New cron"
 
-#: frontend/templates/frontend/user_menu.html:5
-msgid "Devices"
-msgstr "Devices"
+#: crons/templates/crons/index.html:13
+msgid "CronName"
+msgstr "Cron name"
 
-#: frontend/templates/frontend/worker/elements_list.html:10
-#: frontend/templates/frontend/worker/list.html:10
-msgid "WrkName"
+#: crons/templates/crons/index.html:14
+msgid "CronUpdates"
+msgstr "Update crons"
+
+#: crons/templates/crons/index.html:15
+msgid "CronDeletes"
+msgstr "Delete crons"
+
+#: crons/templates/crons/index.html:22
+msgid "CronUpdate"
+msgstr "Update"
+
+#: crons/templates/crons/index.html:23
+msgid "CronDelete"
+msgstr "Delete"
+
+#: crons/templates/crons/show.html:9 tasks/templates/tasks/index.html:9
+#: tasks/templates/tasks/show.html:9
+msgid "TaskNew"
+msgstr "New task"
+
+#: crons/templates/crons/show.html:13 tasks/templates/tasks/index.html:13
+#: tasks/templates/tasks/show.html:13
+msgid "TaskName"
+msgstr "Task name"
+
+#: frontend/feed.py:18
+msgid "AlarmsFeedTitle"
+msgstr "WoT Alarms"
+
+#: frontend/feed.py:19
+msgid "AlarmsFeedDesc"
+msgstr "Emergency notifications."
+
+#: install/templates/install/index.html:10
+msgid "SelJSON"
+msgstr "Select JSON"
+
+#: install/templates/install/index.html:13
+msgid "Upload"
+msgstr "Upload"
+
+#: sensors/templates/sensors/index.html:10
+#: sensors/templates/sensors/online-index.html:10
+msgid "SensName"
 msgstr "Name"
 
-#: frontend/templates/frontend/worker/elements_list.html:11
-msgid "WrkRun"
-msgstr "Run"
-
-#: frontend/templates/frontend/worker/elements_list.html:14
-#: frontend/templates/frontend/worker/list.html:14
-#: frontend/templates/frontend/worker/states_list.html:16
-#: frontend/templates/frontend/worker/workers_list.html:15
-msgid "WrkAddr"
-msgstr "Address"
-
-#: frontend/templates/frontend/worker/list.html:11
-#: frontend/templates/frontend/worker/workers_list.html:12
-msgid "WrkType"
+#: sensors/templates/sensors/index.html:11
+#: sensors/templates/sensors/show.html:12
+msgid "SensType"
 msgstr "Type"
 
-#: frontend/templates/frontend/worker/states_list.html:12
-msgid "WrkCreated"
+#: sensors/templates/sensors/index.html:14
+#: sensors/templates/sensors/online-index.html:14
+#: sensors/templates/sensors/online-show.html:17
+#: sensors/templates/sensors/show.html:15
+msgid "SensAddr"
+msgstr "Address"
+
+#: sensors/templates/sensors/online-index.html:11
+msgid "SensCharts"
+msgstr "Charts"
+
+#: sensors/templates/sensors/online-index.html:23
+msgid "SensChart"
+msgstr "Chart"
+
+#: sensors/templates/sensors/online-show.html:13
+msgid "SensCreated"
 msgstr "Created"
 
-#: frontend/templates/frontend/worker/states_list.html:13
-msgid "WrkState"
-msgstr "State"
+#: sensors/templates/sensors/online-show.html:14
+msgid "SensValue"
+msgstr "Value"
 
-#: frontend/templates/header.html:7
-msgid "LogOut"
-msgstr "LogOut"
-
-#: frontend/templates/header.html:9
-#: frontend/templates/registration/login.html:7
-#: frontend/templates/registration/login.html:14
-msgid "LogIn"
-msgstr "LogIn"
-
-#: frontend/templates/panel.html:9
-msgid "Alarms"
-msgstr "Alarms"
-
-#: frontend/templates/panel.html:13
-msgid "Panel"
-msgstr "Panel"
-
-#: frontend/templates/panel.html:19
-msgid "Admin"
-msgstr "Admin"
-
-#: frontend/templates/panel.html:26
-msgid "Mod"
-msgstr "Mod"
-
-#: frontend/templates/status.html:7
-msgid "SrvStatus"
-msgstr "Server Status"
-
-#: frontend/templates/status.html:9
-msgid "DevStatus"
-msgstr "Device Status"
-
-#: server/settings.py:73
+#: server/settings.py:79
 msgid "English"
 msgstr "English"
 
-#: server/settings.py:74
+#: server/settings.py:80
 msgid "Polish"
 msgstr "Polish"
+
+#: tasks/forms.py:24
+msgid "TaskFormName"
+msgstr "Task name"
+
+#: tasks/forms.py:25
+msgid "TaskFormRefresh"
+msgstr "Task refresh"
+
+#: tasks/forms.py:26
+msgid "TaskFormSensNames"
+msgstr "Sensor address in format: [URL type name]"
+
+#: tasks/forms.py:27
+msgid "TaskFormWrkNames"
+msgstr "Worker address in format: [URL type name]"
+
+#: tasks/forms.py:28
+msgid "TaskFormMinVal"
+msgstr "Minimal limit value to run"
+
+#: tasks/forms.py:29
+msgid "TaskFormMinAllways"
+msgstr "Without lower limit"
+
+#: tasks/forms.py:30
+msgid "TaskFormMaxVal"
+msgstr "Maximum limit value to run"
+
+#: tasks/forms.py:31
+msgid "TaskFormMaxAlways"
+msgstr "Without upper limit"
+
+#: tasks/forms.py:32
+msgid "TaskFormExe"
+msgstr "Run time"
+
+#: tasks/templates/tasks/index.html:14
+msgid "TaskUpdates"
+msgstr "Update tasks"
+
+#: tasks/templates/tasks/index.html:15
+msgid "TaskDeletes"
+msgstr "Delete tasks"
+
+#: tasks/templates/tasks/index.html:22
+msgid "TaskUpdate"
+msgstr "Update"
+
+#: tasks/templates/tasks/index.html:23
+msgid "TaskDelete"
+msgstr "Delete"
+
+#: templates/header.html:7
+msgid "LogOut"
+msgstr "LogOut"
+
+#: templates/header.html:9 templates/registration/login.html:7
+#: templates/registration/login.html:14
+msgid "LogIn"
+msgstr "LogIn"
+
+#: templates/index.html:7
+msgid "Welcome"
+msgstr "Welcome in WoT world!"
+
+#: templates/panel.html:9
+msgid "Alarms"
+msgstr "Alarms"
+
+#: templates/panel.html:13
+msgid "Panel"
+msgstr "Panel"
+
+#: templates/panel.html:19
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/panel.html:26
+msgid "Mod"
+msgstr "Mod"
+
+#: templates/panels/admin_menu.html:4
+msgid "InstallDev"
+msgstr "Install devices"
+
+#: templates/panels/mod_menu.html:4
+msgid "Tasks"
+msgstr "Tasks"
+
+#: templates/panels/mod_menu.html:5
+msgid "Crons"
+msgstr "Crons"
+
+#: templates/panels/user_menu.html:4
+msgid "Sensors"
+msgstr "Sensors"
+
+#: templates/panels/user_menu.html:5
+msgid "Devices"
+msgstr "Devices"
+
+#: templates/status.html:7
+msgid "SrvStatus"
+msgstr "Server Status"
+
+#: templates/status.html:9
+msgid "DevStatus"
+msgstr "Device Status"
+
+#: workers/templates/worker/index.html:10
+#: workers/templates/worker/online-index.html:10
+msgid "WrkName"
+msgstr "Name"
+
+#: workers/templates/worker/index.html:11 workers/templates/worker/show.html:12
+msgid "WrkType"
+msgstr "Type"
+
+#: workers/templates/worker/index.html:14
+#: workers/templates/worker/online-index.html:14
+#: workers/templates/worker/online-show.html:16
+#: workers/templates/worker/show.html:15
+msgid "WrkAddr"
+msgstr "Address"
+
+#: workers/templates/worker/online-index.html:11
+msgid "WrkRun"
+msgstr "Run"
+
+#: workers/templates/worker/online-show.html:12
+msgid "WrkCreated"
+msgstr "Created"
+
+#: workers/templates/worker/online-show.html:13
+msgid "WrkState"
+msgstr "State"
